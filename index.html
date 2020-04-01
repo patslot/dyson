@@ -24,67 +24,74 @@
 <body id="index" ng-controller="dysonController">
 	<div class="container" ng-show="desktop==true">
 			<div class="header">
-				<div id="s1_1" class="col-md-12">
-					<div class="row">Dyson logo</div>
+				<div id="nav">
+					<img src="./public/Dyson_logo.svg" style="height: 50px;">
 				</div>
 			</div>
 			<div class="content">
-				<div id="s1_2" class="col-md-12 nopadding">
-					<div class="title"><span>家居、學校課室的空氣有多潔淨？</span></div>
+				<div id="web_01">
+					<img src="./public/web_01.jpg">
 				</div>
-
-				<div class="row">
-					<div id="s1_3" class="col-md-7 nopadding">
-						<div class="bottom_greyline nopadding">
-							<p>
-								<span class="greentext">「Dyson健康空氣調查」[1]</span><br>
-									調查為期半年，當中包含了與香港過敏協會合作的「環境致敏原與空氣品質認知」的小學調查，並委托第三方實驗室進行研究及分析結果，了解分佈於全港、九、新界各區的家居及小學校舍中空氣存在的隱形污染物。
-							</p>
-						</div>
-						<div class="row">
-							<div class="col-md-6 left_greyline">
-								<div class="col-sm-12 nopadding">
-									<div class="contentbox bottom_greyline" id="s1_3_1">
-										<div class="absolute_content" id="s1_3_1_1">方法</div>
-										<div class="absolute_content smalltext" id="s1_3_1_2">樣機</div>
-										<div class="absolute_content" id="s1_3_1_3"><img src="./public/s1_1.png"></div>
-										<div class="absolute_content " id="s1_3_1_4">Dyson Pure Cool™<br>
-											二合一智能空氣淨化風扇 <sup>[2]</sup></div>
-									</div>
-									<div class="contentbox" id="s1_3_2">
-										<div class="absolute_content smalltext" id="s1_3_2_1">放置</div>
-										<div class="absolute_content number" id="s1_3_2_2">66</div>
-										<div class="absolute_content" id="s1_3_2_3">部空氣清新機</div>
-										<div class="absolute_content" id="s1_3_2_4"><img src="./public/s1_2.png"></div>
-										
-									</div>
-								</div>
-							</div>						
-							<div class="col-md-6 ">
-								<div class="col-sm-12 nopadding">
-									<div class="contentbox bottom_greyline"  id="s1_3_3">
-										<div class="absolute_content smalltext" id="s1_3_3_1">地點</div>
-										<div class="absolute_content number" id="s1_3_3_2">11</div>
-										<div class="absolute_content" id="s1_3_3_3">間學校</div>
-										<div class="absolute_content number" id="s1_3_3_4">44</div>	
-										<div class="absolute_content" id="s1_3_3_5">個家庭</div>
-										<div class="absolute_content" id="s1_3_3_6"><img src="./public/s1_3.png"></div>	
-									</div>
-									<div class="contentbox"  id="s1_3_4">
-										<div class="absolute_content smalltext" id="s1_3_4_1">分析</div>
-										<div class="absolute_content number" id="s1_3_4_2">51</div>
-										<div class="absolute_content" id="s1_3_4_3">個濾網樣本</div>
-										<div class="absolute_content" id="s1_3_4_4"><img src="./public/s1_4.png"></div>
-									</div>
-								</div>	
-							</div>
-						</div>
+				<div id="web_02" class="contentbox">
+					<img src="./public/web_02.jpg">
+					<div number-animation="66" class="absolute_content number" ng-model="s1_2_1" id="s1_2_1">66</div>
+					<div number-animation="11" class="absolute_content number" ng-model="s1_2_2" id="s1_2_2">11</div>
+					<div number-animation="44" class="absolute_content number" ng-model="s1_2_3" id="s1_2_3">44</div>
+					<div number-animation="51" class="absolute_content number" ng-model="s1_2_4" id="s1_2_4">51</div>
+				</div>
+				<div id="web_03" class="contentbox">
+					<img src="./public/web_03.jpg">
+					<div class="absolute_content" ng-model="s3_1" id="s3_1">
+						<img src="./public/s3_1.jpg">
 					</div>
-					<div id="s1_4" class="col-md-5 nopadding">
-						<div class="contentbox"  id="s1_4_1">
-							<div class="absolute_content" id="s1_4_1_1"><img src="./public/s1_5.png"></div>	
-						</div>
+					<div class="absolute_content" ng-model="s3_2" id="s3_2">
+						<img src="./public/s3_2.jpg">
 					</div>
+					<div class="absolute_content" ng-model="s3_3" id="s3_3">
+						<img src="./public/s3_3.jpg">
+					</div>
+					<div class="absolute_content" ng-model="s3_4" id="s3_4">
+						<img src="./public/s3_4.jpg">
+					</div>
+					<div class="absolute_content" ng-model="s3_5" id="s3_5">
+						<img src="./public/s3_5.jpg">
+					</div>
+				</div>
+				<div id="web_04" class="contentbox">
+					<img src="./public/web_04.jpg">
+				</div>
+				<div id="web_05" class="contentbox">
+					<img src="./public/web_05.jpg">
+				</div>
+				<div id="web_06" class="contentbox">
+					<img src="./public/web_06.jpg">
+				</div>
+				<div id="web_07" class="contentbox">
+					<img src="./public/web_07.jpg">
+				</div>
+				<div id="web_08" class="contentbox">
+					<img src="./public/web_08.jpg">
+				</div>
+				<div id="web_09" class="contentbox">
+					<img src="./public/web_09.jpg">
+				</div>
+				<div id="web_10" class="contentbox">
+					<img src="./public/web_10.jpg">
+				</div>
+				<div id="web_11" class="contentbox">
+					<img src="./public/web_11.jpg">
+				</div>
+				<div id="web_12" class="contentbox">
+					<img src="./public/web_12.jpg">
+				</div>
+				<div id="web_13" class="contentbox">
+					<img src="./public/web_13.jpg">
+				</div>
+				<div id="web_14" class="contentbox">
+					<img src="./public/web_14.jpg">
+				</div>
+				<div id="web_15" class="contentbox">
+					<img src="./public/web_15.jpg">
 				</div>
 			</div>
 	</div>
