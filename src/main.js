@@ -54,7 +54,7 @@ dysonApp.controller('dysonController', function dysonController($scope, $timeout
    
 });
 dysonApp.directive('numberAnimation', ['$window', scrollDirective]);
-
+dysonApp.directive('fadeInAnimation', ['$window', fadeInScrollDirective]);
 function scrollDirective($window) {
     function isScrolledIntoView(elem){
         var docViewTop = $(window).scrollTop();
@@ -85,6 +85,40 @@ function scrollDirective($window) {
 
         $window.on('scroll', handler);
       }
+    };
+};
+function fadeInScrollDirective($window){
+    function isScrolledIntoView(elem){
+        var docViewTop = $(window).scrollTop();
+        var docViewBottom = docViewTop + $(window).height();
+        var elemTop = $(elem).offset().top;
+        var elemBottom = elemTop + $(elem).height();
+        return ((elemBottom <= docViewBottom) && (elemTop >= docViewTop));
+    }
+    function fadeInAnimation(element){
+        anime({
+            targets: '#' + element + ' div',
+            duration: 1000,
+            delay: function(target, index) {
+                return index * 500;
+             },
+            opacity: 1,
+            easing: 'easeInSine'
+          });
+    }
+    return {
+    link: function (scope, element, attrs) {
+        var handler;
+        $window = angular.element($window);
+        
+        handler = function() {
+           if( isScrolledIntoView(element) ){
+                fadeInAnimation(attrs.id);
+           }
+        };
+
+        $window.on('scroll', handler);
+     }
     };
 };
 

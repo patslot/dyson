@@ -48770,7 +48770,7 @@ dysonApp.controller('dysonController', function dysonController($scope, $timeout
    
 });
 dysonApp.directive('numberAnimation', ['$window', scrollDirective]);
-
+dysonApp.directive('fadeInAnimation', ['$window', fadeInScrollDirective]);
 function scrollDirective($window) {
     function isScrolledIntoView(elem){
         var docViewTop = __WEBPACK_IMPORTED_MODULE_0_jquery___default()(window).scrollTop();
@@ -48801,6 +48801,40 @@ function scrollDirective($window) {
 
         $window.on('scroll', handler);
       }
+    };
+};
+function fadeInScrollDirective($window){
+    function isScrolledIntoView(elem){
+        var docViewTop = __WEBPACK_IMPORTED_MODULE_0_jquery___default()(window).scrollTop();
+        var docViewBottom = docViewTop + __WEBPACK_IMPORTED_MODULE_0_jquery___default()(window).height();
+        var elemTop = __WEBPACK_IMPORTED_MODULE_0_jquery___default()(elem).offset().top;
+        var elemBottom = elemTop + __WEBPACK_IMPORTED_MODULE_0_jquery___default()(elem).height();
+        return ((elemBottom <= docViewBottom) && (elemTop >= docViewTop));
+    }
+    function fadeInAnimation(element){
+        __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_5_animejs_lib_anime_es_js__["a" /* default */])({
+            targets: '#' + element + ' div',
+            duration: 1000,
+            delay: function(target, index) {
+                return index * 500;
+             },
+            opacity: 1,
+            easing: 'easeInSine'
+          });
+    }
+    return {
+    link: function (scope, element, attrs) {
+        var handler;
+        $window = __WEBPACK_IMPORTED_MODULE_1_angular___default.a.element($window);
+        
+        handler = function() {
+           if( isScrolledIntoView(element) ){
+                fadeInAnimation(attrs.id);
+           }
+        };
+
+        $window.on('scroll', handler);
+     }
     };
 };
 
