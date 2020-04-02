@@ -46,9 +46,21 @@ h3{
         width: 100%;
     }
     @media(max-width: 799px){
-        width: 100%;
+        display:none;
     }
 }
+
+.mobilecontainer{
+    width: 100%;
+    margin: 0 auto;
+    img {
+        width: 100%;
+    }
+    @media(min-width: 799px){
+        display:none;
+    }
+}
+
 .loading{
     width: 100%;
     height: 100%;
@@ -180,4 +192,44 @@ h3{
         top: 35%;
     }
    
+}
+#web_05{
+    width: 100%;
+    #s5_1{
+        left: 46%;
+        top: 47%;
+        font-size: 1.7em;
+    }
+}
+
+#web_06{
+    width: 100%;
+    height: 33vw;
+    max-height: 300px;
+    #s6_1{
+        width: 27.4%;
+        left: 25%;
+        top: 10%;
+    }
+    #s6_2{
+        width: 27.4%;
+        left: 52%;
+        top: 10%;
+    }
+    #s6_3{
+        width: 27.4%;
+        left: 8%;
+        top: 53%;
+    }
+    #s6_4{
+        width: 27.4%;
+        left: 37.4%;
+        top: 53%;
+    }
+    #s6_5{
+        width: 27.4%;
+        left: 65.4%;
+        top: 53%;
+    }
+  
 }

@@ -48802,7 +48802,7 @@ function scrollDirective($window) {
         $window.on('scroll', handler);
       }
     };
-};
+}
 function fadeInScrollDirective($window){
     function isScrolledIntoView(elem){
         var docViewTop = __WEBPACK_IMPORTED_MODULE_0_jquery___default()(window).scrollTop();
@@ -48825,18 +48825,22 @@ function fadeInScrollDirective($window){
     return {
     link: function (scope, element, attrs) {
         var handler;
+        var played = false; 
         $window = __WEBPACK_IMPORTED_MODULE_1_angular___default.a.element($window);
         
         handler = function() {
            if( isScrolledIntoView(element) ){
-                fadeInAnimation(attrs.id);
+               if(!played){
+                    fadeInAnimation(attrs.id);
+                    played = true; 
+               }
            }
         };
 
         $window.on('scroll', handler);
      }
     };
-};
+}
 
 
 function init() {

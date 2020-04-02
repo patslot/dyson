@@ -22,7 +22,7 @@
 
 </head>
 <body id="index" ng-controller="dysonController">
-	<div class="container" ng-show="desktop==true">
+	<div class="container" >
 			<div class="header">
 				<div id="nav">
 					<img src="./public/Dyson_logo.svg" style="height: 50px;">
@@ -34,10 +34,10 @@
 				</div>
 				<div id="web_02" class="contentbox">
 					<img src="./public/web_02.jpg">
-					<div number-animation="66" class="absolute_content number" ng-model="s1_2_1" id="s1_2_1">66</div>
-					<div number-animation="11" class="absolute_content number" ng-model="s1_2_2" id="s1_2_2">11</div>
-					<div number-animation="44" class="absolute_content number" ng-model="s1_2_3" id="s1_2_3">44</div>
-					<div number-animation="51" class="absolute_content number" ng-model="s1_2_4" id="s1_2_4">51</div>
+					<div number-animation="66" class="absolute_content number" ng-model="s1_2_1" id="s1_2_1"></div>
+					<div number-animation="11" class="absolute_content number" ng-model="s1_2_2" id="s1_2_2"></div>
+					<div number-animation="44" class="absolute_content number" ng-model="s1_2_3" id="s1_2_3"></div>
+					<div number-animation="51" class="absolute_content number" ng-model="s1_2_4" id="s1_2_4"></div>
 				</div>
 				<div id="web_03" class="contentbox">
 					<img src="./public/web_03.jpg">
@@ -74,9 +74,24 @@
 				</div>
 				<div id="web_05" class="contentbox">
 					<img src="./public/web_05.jpg">
+					<div number-animation="1840000" class="absolute_content number" ng-model="s5_1" id="s5_1"></div>
 				</div>
 				<div id="web_06" class="contentbox">
-					<img src="./public/web_06.jpg">
+					<div class="absolute_content" ng-model="s6_1" id="s6_1">
+						<img src="./public/s6_1.jpg">
+					</div>
+					<div class="absolute_content" ng-model="s6_2" id="s6_2">
+						<img src="./public/s6_2.jpg">
+					</div>
+					<div class="absolute_content" ng-model="s6_3" id="s6_3">
+						<img src="./public/s6_3.jpg">
+					</div>
+					<div class="absolute_content" ng-model="s6_4" id="s6_4">
+						<img src="./public/s6_4.jpg">
+					</div>
+					<div class="absolute_content" ng-model="s6_5" id="s6_5">
+						<img src="./public/s6_5.jpg">
+					</div>
 				</div>
 				<div id="web_07" class="contentbox">
 					<img src="./public/web_07.jpg">
@@ -107,6 +122,92 @@
 				</div>
 			</div>
 	</div>
+
+	<div class="mobilecontainer" >
+			<div class="header">
+				<div id="nav">
+					<img src="./public/Dyson_logo.svg" style="height: 50px;">
+				</div>
+			</div>
+			<div class="content">
+				<div id="mobile_01">
+					<img src="./public/mobile_01.jpg">
+				</div>
+				<div id="mobile_02" class="contentbox">
+					<img src="./public/mobile_02.jpg">
+					<div number-animation="66" class="absolute_content number" ng-model="s1_2_1" id="s1_2_1"></div>
+					<div number-animation="11" class="absolute_content number" ng-model="s1_2_2" id="s1_2_2"></div>
+					<div number-animation="44" class="absolute_content number" ng-model="s1_2_3" id="s1_2_3"></div>
+					<div number-animation="51" class="absolute_content number" ng-model="s1_2_4" id="s1_2_4"></div>
+				</div>
+				<div id="mobile_03" class="contentbox">
+					<img src="./public/mobile_03.jpg">
+					<div class="absolute_content" ng-model="s3_1" id="s3_1">
+						<img src="./public/s3_1.jpg">
+					</div>
+					<div class="absolute_content" ng-model="s3_2" id="s3_2">
+						<img src="./public/s3_2.jpg">
+					</div>
+					<div class="absolute_content" ng-model="s3_3" id="s3_3">
+						<img src="./public/s3_3.jpg">
+					</div>
+					<div class="absolute_content" ng-model="s3_4" id="s3_4">
+						<img src="./public/s3_4.jpg">
+					</div>
+					<div class="absolute_content" ng-model="s3_5" id="s3_5">
+						<img src="./public/s3_5.jpg">
+					</div>
+				</div>
+				<div fade-in-animation="" id="mobile_04" class="contentbox">
+					<img src="./public/mobile_04.jpg">
+					<div class="absolute_content" ng-model="s4_1" id="s4_1">
+						<img src="./public/s4_1.jpg">
+					</div>
+					<div class="absolute_content" ng-model="s4_2" id="s4_2">
+						<img src="./public/s4_2.jpg">
+					</div>
+					<div class="absolute_content" ng-model="s4_3" id="s4_3">
+						<img src="./public/s4_3.jpg">
+					</div>
+					<div class="absolute_content" ng-model="s4_4" id="s4_4">
+						<img src="./public/s4_4.jpg">
+					</div>
+				</div>
+				<div id="mobile_05" class="contentbox">
+					<img src="./public/mobile_05.jpg">
+				</div>
+				<div id="mobile_06" class="contentbox">
+					<img src="./public/mobile_06.jpg">
+				</div>
+				<div id="mobile_07" class="contentbox">
+					<img src="./public/mobile_07.jpg">
+				</div>
+				<div id="mobile_08" class="contentbox">
+					<img src="./public/mobile_08.jpg">
+				</div>
+				<div id="mobile_09" class="contentbox">
+					<img src="./public/mobile_09.jpg">
+				</div>
+				<div id="mobile_10" class="contentbox">
+					<img src="./public/mobile_10.jpg">
+				</div>
+				<div id="mobile_11" class="contentbox">
+					<img src="./public/mobile_11.jpg">
+				</div>
+				<div id="mobile_12" class="contentbox">
+					<img src="./public/mobile_12.jpg">
+				</div>
+				<div id="mobile_13" class="contentbox">
+					<img src="./public/mobile_13.jpg">
+				</div>
+				<div id="mobile_14" class="contentbox">
+					<img src="./public/mobile_14.jpg">
+				</div>
+			
+				
+			</div>
+	</div>
+
 </body>
 
 </html>
