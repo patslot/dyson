@@ -16,7 +16,7 @@ import anime from 'animejs/lib/anime.es.js';
 
 
 var dysonApp = angular.module('dyson', []);
-dysonApp.controller('dysonController', function dysonController($scope, $timeout) {
+dysonApp.controller('dysonController', function dysonController($scope, $window, $timeout) {
     function isScrolledIntoView(elem){
         var docViewTop = $(window).scrollTop();
         var docViewBottom = docViewTop + $(window).height();
@@ -24,9 +24,9 @@ dysonApp.controller('dysonController', function dysonController($scope, $timeout
         var elemBottom = elemTop + $(elem).height();
         return ((elemBottom <= docViewBottom) && (elemTop >= docViewTop));
     }
- 
     var options = {
         decimalPlaces: 0,
+        duration: 5,
         useEasing : true,
         useGrouping : true,
         separator : ',',
@@ -39,7 +39,6 @@ dysonApp.controller('dysonController', function dysonController($scope, $timeout
     $scope.desktop = true; 
     $scope.$watch('$viewContentLoaded',
         function (){
-            console.log('start');
             var animate_s1_2_1 = new CountUp("s1_2_1", 66, options);
             var animate_s1_2_2 = new CountUp("s1_2_2", 11, options);
             var animate_s1_2_3 = new CountUp("s1_2_3", 44, options);
@@ -48,92 +47,10 @@ dysonApp.controller('dysonController', function dysonController($scope, $timeout
             animate_s1_2_2.start();
             animate_s1_2_3.start();
             animate_s1_2_4.start();
-           
+            
+            s3_animation();
         }
-    );    
-   
-});
-dysonApp.directive('numberAnimation', ['$window', scrollDirective]);
-dysonApp.directive('fadeInAnimation', ['$window', fadeInScrollDirective]);
-function scrollDirective($window) {
-    function isScrolledIntoView(elem){
-        var docViewTop = $(window).scrollTop();
-        var docViewBottom = docViewTop + $(window).height();
-        var elemTop = $(elem).offset().top;
-        var elemBottom = elemTop + $(elem).height();
-        return ((elemBottom <= docViewBottom) && (elemTop >= docViewTop));
-    }
-    return {
-      link: function (scope, element, attrs) {
-        var handler;
-        $window = angular.element($window);
-        var options = {
-            decimalPlaces: 0,
-            useEasing : true,
-            useGrouping : true,
-            separator : ',',
-            decimal : ".",
-            prefix : '',
-            suffix : ''
-        }
-        var animate_obj = new CountUp(attrs.id, attrs.numberAnimation, options);
-        handler = function() {
-           if( isScrolledIntoView(element) ){
-                animate_obj.start();
-           }
-        };
-
-        $window.on('scroll', handler);
-      }
-    };
-}
-function fadeInScrollDirective($window){
-    function isScrolledIntoView(elem){
-        var docViewTop = $(window).scrollTop();
-        var docViewBottom = docViewTop + $(window).height();
-        var elemTop = $(elem).offset().top;
-        var elemBottom = elemTop + $(elem).height();
-        return ((elemBottom <= docViewBottom) && (elemTop >= docViewTop));
-    }
-    function fadeInAnimation(element){
-        anime({
-            targets: '#' + element + ' div',
-            duration: 1000,
-            delay: function(target, index) {
-                return index * 500;
-             },
-            opacity: 1,
-            easing: 'easeInSine'
-          });
-    }
-    return {
-    link: function (scope, element, attrs) {
-        var handler;
-        var played = false; 
-        $window = angular.element($window);
-        
-        handler = function() {
-           if( isScrolledIntoView(element) ){
-               if(!played){
-                    fadeInAnimation(attrs.id);
-                    played = true; 
-               }
-           }
-        };
-
-        $window.on('scroll', handler);
-     }
-    };
-}
-
-
-function init() {
-
-}
-
-
-
-$(document).ready(function () {
+    );   
     function s3_animation(){
         anime({
             targets: '#web_03 div',
@@ -144,6 +61,96 @@ $(document).ready(function () {
             opacity: 1,
             easing: 'easeInSine'
           });
+    } 
+    function s4_animation(){
+        anime({
+            targets: '#web_04 div',
+            duration: 2000,
+            delay: function(target, index) {
+                return index * 500;
+             },
+            opacity: 1,
+            easing: 'easeInSine'
+          });
+    } 
+    function s5_animation(){
+        var options = {
+            decimalPlaces: 0,
+            useEasing : true,
+            useGrouping : true,
+            duration: 5,
+            separator : ',',
+            decimal : ".",
+            prefix : '',
+            suffix : ''
+        }
+        var animate_obj = new CountUp('s5_1', '1840000', options);
+        animate_obj.start();
+    } 
+    function s6_animation(){
+        anime({
+            targets: '#web_06 div',
+            duration: 2000,
+            delay: function(target, index) {
+                return index * 200;
+             },
+            opacity: 1,
+            translateY: -20,
+            easing: 'easeInSine',
+            complete: function(anim) {
+                s7_animation();
+             }
+          });
+    } 
+    function s7_animation(){
+        anime({
+            targets: '#web_07 img',
+            duration: 1000,
+            opacity: 1,
+            translateY: -20,
+            easing: 'easeInSine'
+          });
+    } 
+    function isScrolledIntoView(elem){
+        var docViewTop = $(window).scrollTop();
+        var docViewBottom = docViewTop + $(window).height();
+        var elemTop = $(elem).offset().top;
+        var elemBottom = elemTop + $(elem).height();
+        return ((elemBottom <= docViewBottom) && (elemTop >= docViewTop));
     }
-    s3_animation();
+    var a04 = true ; 
+    var a05 = true ; 
+    var a06 = true ; 
+    angular.element($window).bind("scroll", function(e) {
+        
+        if(a04 && isScrolledIntoView('#web_04')){
+            console.log('web 4 animation start');
+            s4_animation();
+            a04= false ;
+        }
+        if(a05 && isScrolledIntoView('#web_05')){
+            console.log('web 5 animation start');
+            s5_animation();
+            a05= false ;
+        }
+        if(a06 && isScrolledIntoView('#web_06')){
+            console.log('web 6 animation start');
+            s6_animation();
+            a06= false ;
+        }
+    })
+});
+
+
+
+
+function init() {
+
+}
+
+
+
+$(document).ready(function () {
+
+   
 });

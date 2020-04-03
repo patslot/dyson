@@ -22,22 +22,29 @@
 
 </head>
 <body id="index" ng-controller="dysonController">
+	<div class="header">
+		
+		<div id="nav">
+			<div class="nav_item"><a src="#a">調查概覽</a></div>
+			<div style="margin: 0 40px;">|</div>
+			<div class="nav_item"><a src="#b">濾網分析結果</a></div>
+			<div style="margin: 0 40px;">|</div>
+			<div class="nav_item"><a src="#c">隱形污染源頭</a></div>
+			<div style="margin: 0 40px;">|</div>
+			<div class="nav_item"><a src="#d">全面防禦淨化</a></div>
+		</div>
+	</div>
 	<div class="container" >
-			<div class="header">
-				<div id="nav">
-					<img src="./public/Dyson_logo.svg" style="height: 50px;">
-				</div>
-			</div>
 			<div class="content">
 				<div id="web_01">
 					<img src="./public/web_01.jpg">
 				</div>
 				<div id="web_02" class="contentbox">
 					<img src="./public/web_02.jpg">
-					<div number-animation="66" class="absolute_content number" ng-model="s1_2_1" id="s1_2_1"></div>
-					<div number-animation="11" class="absolute_content number" ng-model="s1_2_2" id="s1_2_2"></div>
-					<div number-animation="44" class="absolute_content number" ng-model="s1_2_3" id="s1_2_3"></div>
-					<div number-animation="51" class="absolute_content number" ng-model="s1_2_4" id="s1_2_4"></div>
+					<div class="absolute_content number" ng-model="s1_2_1" id="s1_2_1"></div>
+					<div class="absolute_content number" ng-model="s1_2_2" id="s1_2_2"></div>
+					<div class="absolute_content number" ng-model="s1_2_3" id="s1_2_3"></div>
+					<div class="absolute_content number" ng-model="s1_2_4" id="s1_2_4"></div>
 				</div>
 				<div id="web_03" class="contentbox">
 					<img src="./public/web_03.jpg">
@@ -57,7 +64,7 @@
 						<img src="./public/s3_5.jpg">
 					</div>
 				</div>
-				<div fade-in-animation="" id="web_04" class="contentbox">
+				<div id="web_04" class="contentbox">
 					<img src="./public/web_04.jpg">
 					<div class="absolute_content" ng-model="s4_1" id="s4_1">
 						<img src="./public/s4_1.jpg">
@@ -74,7 +81,7 @@
 				</div>
 				<div id="web_05" class="contentbox">
 					<img src="./public/web_05.jpg">
-					<div number-animation="1840000" class="absolute_content number" ng-model="s5_1" id="s5_1"></div>
+					<div class="absolute_content number" ng-model="s5_1" id="s5_1"></div>
 				</div>
 				<div id="web_06" class="contentbox">
 					<div class="absolute_content" ng-model="s6_1" id="s6_1">
@@ -203,7 +210,9 @@
 				<div id="mobile_14" class="contentbox">
 					<img src="./public/mobile_14.jpg">
 				</div>
-			
+				<div id="mobile_15" class="contentbox">
+					<img src="./public/mobile_15.jpg">
+				</div>
 				
 			</div>
 	</div>

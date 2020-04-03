@@ -40,7 +40,7 @@ h3{
     color: $maincolor;
 }
 .container{
-    width: 800px;
+    max-width: 1000px;
     margin: 0 auto;
     img {
         width: 100%;
@@ -107,6 +107,25 @@ h3{
 .absolute_content{
     position: absolute;
 }
+.header{
+    width:100%;
+    padding-top:195px;
+    background: url("../../public/header.jpg") no-repeat center top;
+    @media(max-width: 799px){
+        display:none;
+    }
+    #nav{
+        height: 74px;
+        background: #000;
+        color: #fff;
+        display:flex;
+        align-items:  center;
+        flex-wrap: nowrap;
+        justify-content: center;
+        font-size: 1.2em;
+    }
+}
+
 #web_02{
     width: 100%;
     #s1_2_1{
@@ -197,39 +216,53 @@ h3{
     width: 100%;
     #s5_1{
         left: 46%;
-        top: 47%;
-        font-size: 1.7em;
+        top: 48.5%;
+        font-size: 2.1em;
     }
 }
 
 #web_06{
     width: 100%;
     height: 33vw;
-    max-height: 300px;
+    max-height: 330px;
     #s6_1{
+        opacity: 0;
         width: 27.4%;
         left: 25%;
         top: 10%;
     }
     #s6_2{
+        opacity: 0;
         width: 27.4%;
         left: 52%;
         top: 10%;
     }
     #s6_3{
+        opacity: 0;
         width: 27.4%;
         left: 8%;
         top: 53%;
     }
     #s6_4{
+        opacity: 0;
         width: 27.4%;
         left: 37.4%;
         top: 53%;
     }
     #s6_5{
+        opacity: 0;
         width: 27.4%;
         left: 65.4%;
         top: 53%;
     }
   
+}
+
+#web_07{
+    width: 100%;
+    height: 25vw;
+    max-height: 230px;
+    img{
+        opacity:0;
+    }
 }

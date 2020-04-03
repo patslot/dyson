@@ -48732,7 +48732,7 @@ global.jQuery = __WEBPACK_IMPORTED_MODULE_0_jquery___default.a;
 
 
 var dysonApp = __WEBPACK_IMPORTED_MODULE_1_angular___default.a.module('dyson', []);
-dysonApp.controller('dysonController', function dysonController($scope, $timeout) {
+dysonApp.controller('dysonController', function dysonController($scope, $window, $timeout) {
     function isScrolledIntoView(elem){
         var docViewTop = __WEBPACK_IMPORTED_MODULE_0_jquery___default()(window).scrollTop();
         var docViewBottom = docViewTop + __WEBPACK_IMPORTED_MODULE_0_jquery___default()(window).height();
@@ -48740,9 +48740,9 @@ dysonApp.controller('dysonController', function dysonController($scope, $timeout
         var elemBottom = elemTop + __WEBPACK_IMPORTED_MODULE_0_jquery___default()(elem).height();
         return ((elemBottom <= docViewBottom) && (elemTop >= docViewTop));
     }
- 
     var options = {
         decimalPlaces: 0,
+        duration: 5,
         useEasing : true,
         useGrouping : true,
         separator : ',',
@@ -48755,7 +48755,6 @@ dysonApp.controller('dysonController', function dysonController($scope, $timeout
     $scope.desktop = true; 
     $scope.$watch('$viewContentLoaded',
         function (){
-            console.log('start');
             var animate_s1_2_1 = new __WEBPACK_IMPORTED_MODULE_4__countUp__["a" /* CountUp */]("s1_2_1", 66, options);
             var animate_s1_2_2 = new __WEBPACK_IMPORTED_MODULE_4__countUp__["a" /* CountUp */]("s1_2_2", 11, options);
             var animate_s1_2_3 = new __WEBPACK_IMPORTED_MODULE_4__countUp__["a" /* CountUp */]("s1_2_3", 44, options);
@@ -48764,92 +48763,10 @@ dysonApp.controller('dysonController', function dysonController($scope, $timeout
             animate_s1_2_2.start();
             animate_s1_2_3.start();
             animate_s1_2_4.start();
-           
+            
+            s3_animation();
         }
-    );    
-   
-});
-dysonApp.directive('numberAnimation', ['$window', scrollDirective]);
-dysonApp.directive('fadeInAnimation', ['$window', fadeInScrollDirective]);
-function scrollDirective($window) {
-    function isScrolledIntoView(elem){
-        var docViewTop = __WEBPACK_IMPORTED_MODULE_0_jquery___default()(window).scrollTop();
-        var docViewBottom = docViewTop + __WEBPACK_IMPORTED_MODULE_0_jquery___default()(window).height();
-        var elemTop = __WEBPACK_IMPORTED_MODULE_0_jquery___default()(elem).offset().top;
-        var elemBottom = elemTop + __WEBPACK_IMPORTED_MODULE_0_jquery___default()(elem).height();
-        return ((elemBottom <= docViewBottom) && (elemTop >= docViewTop));
-    }
-    return {
-      link: function (scope, element, attrs) {
-        var handler;
-        $window = __WEBPACK_IMPORTED_MODULE_1_angular___default.a.element($window);
-        var options = {
-            decimalPlaces: 0,
-            useEasing : true,
-            useGrouping : true,
-            separator : ',',
-            decimal : ".",
-            prefix : '',
-            suffix : ''
-        }
-        var animate_obj = new __WEBPACK_IMPORTED_MODULE_4__countUp__["a" /* CountUp */](attrs.id, attrs.numberAnimation, options);
-        handler = function() {
-           if( isScrolledIntoView(element) ){
-                animate_obj.start();
-           }
-        };
-
-        $window.on('scroll', handler);
-      }
-    };
-}
-function fadeInScrollDirective($window){
-    function isScrolledIntoView(elem){
-        var docViewTop = __WEBPACK_IMPORTED_MODULE_0_jquery___default()(window).scrollTop();
-        var docViewBottom = docViewTop + __WEBPACK_IMPORTED_MODULE_0_jquery___default()(window).height();
-        var elemTop = __WEBPACK_IMPORTED_MODULE_0_jquery___default()(elem).offset().top;
-        var elemBottom = elemTop + __WEBPACK_IMPORTED_MODULE_0_jquery___default()(elem).height();
-        return ((elemBottom <= docViewBottom) && (elemTop >= docViewTop));
-    }
-    function fadeInAnimation(element){
-        __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_5_animejs_lib_anime_es_js__["a" /* default */])({
-            targets: '#' + element + ' div',
-            duration: 1000,
-            delay: function(target, index) {
-                return index * 500;
-             },
-            opacity: 1,
-            easing: 'easeInSine'
-          });
-    }
-    return {
-    link: function (scope, element, attrs) {
-        var handler;
-        var played = false; 
-        $window = __WEBPACK_IMPORTED_MODULE_1_angular___default.a.element($window);
-        
-        handler = function() {
-           if( isScrolledIntoView(element) ){
-               if(!played){
-                    fadeInAnimation(attrs.id);
-                    played = true; 
-               }
-           }
-        };
-
-        $window.on('scroll', handler);
-     }
-    };
-}
-
-
-function init() {
-
-}
-
-
-
-__WEBPACK_IMPORTED_MODULE_0_jquery___default()(document).ready(function () {
+    );   
     function s3_animation(){
         __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_5_animejs_lib_anime_es_js__["a" /* default */])({
             targets: '#web_03 div',
@@ -48860,8 +48777,98 @@ __WEBPACK_IMPORTED_MODULE_0_jquery___default()(document).ready(function () {
             opacity: 1,
             easing: 'easeInSine'
           });
+    } 
+    function s4_animation(){
+        __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_5_animejs_lib_anime_es_js__["a" /* default */])({
+            targets: '#web_04 div',
+            duration: 2000,
+            delay: function(target, index) {
+                return index * 500;
+             },
+            opacity: 1,
+            easing: 'easeInSine'
+          });
+    } 
+    function s5_animation(){
+        var options = {
+            decimalPlaces: 0,
+            useEasing : true,
+            useGrouping : true,
+            duration: 5,
+            separator : ',',
+            decimal : ".",
+            prefix : '',
+            suffix : ''
+        }
+        var animate_obj = new __WEBPACK_IMPORTED_MODULE_4__countUp__["a" /* CountUp */]('s5_1', '1840000', options);
+        animate_obj.start();
+    } 
+    function s6_animation(){
+        __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_5_animejs_lib_anime_es_js__["a" /* default */])({
+            targets: '#web_06 div',
+            duration: 2000,
+            delay: function(target, index) {
+                return index * 200;
+             },
+            opacity: 1,
+            translateY: -20,
+            easing: 'easeInSine',
+            complete: function(anim) {
+                s7_animation();
+             }
+          });
+    } 
+    function s7_animation(){
+        __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_5_animejs_lib_anime_es_js__["a" /* default */])({
+            targets: '#web_07 img',
+            duration: 1000,
+            opacity: 1,
+            translateY: -20,
+            easing: 'easeInSine'
+          });
+    } 
+    function isScrolledIntoView(elem){
+        var docViewTop = __WEBPACK_IMPORTED_MODULE_0_jquery___default()(window).scrollTop();
+        var docViewBottom = docViewTop + __WEBPACK_IMPORTED_MODULE_0_jquery___default()(window).height();
+        var elemTop = __WEBPACK_IMPORTED_MODULE_0_jquery___default()(elem).offset().top;
+        var elemBottom = elemTop + __WEBPACK_IMPORTED_MODULE_0_jquery___default()(elem).height();
+        return ((elemBottom <= docViewBottom) && (elemTop >= docViewTop));
     }
-    s3_animation();
+    var a04 = true ; 
+    var a05 = true ; 
+    var a06 = true ; 
+    __WEBPACK_IMPORTED_MODULE_1_angular___default.a.element($window).bind("scroll", function(e) {
+        
+        if(a04 && isScrolledIntoView('#web_04')){
+            console.log('web 4 animation start');
+            s4_animation();
+            a04= false ;
+        }
+        if(a05 && isScrolledIntoView('#web_05')){
+            console.log('web 5 animation start');
+            s5_animation();
+            a05= false ;
+        }
+        if(a06 && isScrolledIntoView('#web_06')){
+            console.log('web 6 animation start');
+            s6_animation();
+            a06= false ;
+        }
+    })
+});
+
+
+
+
+function init() {
+
+}
+
+
+
+__WEBPACK_IMPORTED_MODULE_0_jquery___default()(document).ready(function () {
+
+   
 });
 /* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__(0), __webpack_require__(5)))
 
