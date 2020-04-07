@@ -42,6 +42,7 @@ h3{
 .container{
     max-width: 1000px;
     margin: 0 auto;
+    padding-top: 269px;
     img {
         width: 100%;
     }
@@ -53,6 +54,7 @@ h3{
 .mobilecontainer{
     width: 100%;
     margin: 0 auto;
+    padding-top: 31vw;
     img {
         width: 100%;
     }
@@ -107,10 +109,65 @@ h3{
 .absolute_content{
     position: absolute;
 }
+.mobileheader{
+    width:100%;
+    height: 31vw;
+    background: #fff url("../../public/mobileheader.jpg") no-repeat center top;
+    background-size: 100%;
+    position: fixed;
+    z-index: 100;
+    @media(min-width: 799px){
+        display:none;
+    }
+    .nav_open{
+        position: absolute;
+        width: 8%;
+        right: 8%;
+        top: 18%;
+        img{
+            width: 100%;
+        }
+        
+    }
+    #mobile_nav{
+        width: 50vw;
+        height: 100%;
+        background: #fff;
+        color: #666666;
+        display:table;
+        position: fixed;
+        top:0;
+        left: 110%;
+        align-items:  center;
+        flex-wrap: nowrap;
+        justify-content: center;
+        font-size: 1em;
+        -webkit-box-shadow: -7px 2px 19px -10px rgba(0,0,0,0.75);
+        -moz-box-shadow: -7px 2px 19px -10px rgba(0,0,0,0.75);
+        box-shadow: -7px 2px 19px -10px rgba(0,0,0,0.75);
+        .nav_close{
+            text-align: right;
+            img{
+                width: 10%;
+                margin: 10px 30px;
+            }
+            
+        }
+        .nav_item{
+            text-align: center;
+        }
+        a{
+            color: #666;
+            text-decoration: none;
+        }
+    }
+}
 .header{
     width:100%;
     padding-top:195px;
-    background: url("../../public/header.jpg") no-repeat center top;
+    background: #fff url("../../public/header.jpg") no-repeat center top;
+    position: fixed;
+    z-index: 100;
     @media(max-width: 799px){
         display:none;
     }
@@ -123,6 +180,9 @@ h3{
         flex-wrap: nowrap;
         justify-content: center;
         font-size: 1.2em;
+        a{
+            text-decoration: none;
+        }
     }
 }
 
@@ -264,5 +324,503 @@ h3{
     max-height: 230px;
     img{
         opacity:0;
+    }
+}
+
+#web_08{
+    width: 100%;
+    .barchart1{
+        background: $maincolor;
+        height: 0.8em;
+        width: 0%;
+        top: 32%;
+        left: 10.4%;
+    }
+    .barchart1_text{
+        color: $maincolor;
+        top: 28.5%;
+        left: 25.4%;
+        font-size: 0.8em;
+        opacity:0;
+    }
+
+    .barchart2{
+        background: $darkcolor;
+        height: 0.8em;
+        width: 0%;
+        top: 47%;
+        left: 10.4%;
+    }
+    .barchart2_text{
+        color: $darkcolor;
+        top: 42.7%;
+        left: 22.8%;
+        font-size: 0.8em;
+        opacity:0;
+    }
+
+    .barchart3{
+        background: $darkcolor;
+        height: 0.8em;
+        width: 0%;
+        top: 32%;
+        left: 41.4%;
+    }
+    .barchart3_text{
+        color: $darkcolor;
+        top: 28.5%;
+        left: 48.5%;
+        font-size: 0.8em;
+        opacity:0;
+    }
+
+    .barchart4{
+        background: $maincolor;
+        height: 0.8em;
+        width: 0%;
+        top: 47%;
+        left: 41.4%;
+    }
+    .barchart4_text{
+        color: $maincolor;
+        top: 42.7%;
+        left: 56%;
+        font-size: 0.8em;
+        opacity:0;
+    }
+
+    .barchart5{
+        background: $maincolor;
+        height: 0.8em;
+        width: 0%;
+        top: 32%;
+        left: 72.4%;
+    }
+    .barchart5_text{
+        color: $maincolor;
+        top: 28.5%;
+        left: 87.3%;
+        font-size: 0.8em;
+        opacity:0;
+    }
+
+    .barchart6{
+        background: $darkcolor;
+        height: 0.8em;
+        width: 0%;
+        top: 47%;
+        left: 72.4%;
+    }
+    .barchart6_text{
+        color: $darkcolor;
+        top: 42.3%;
+        left: 81.4%;
+        font-size: 0.8em;
+        opacity:0;
+    }
+}
+
+#web_10{
+    width: 100%;
+    #s10_1{
+        left: 0%;
+        top: 32%;
+        opacity:0;
+    }
+}
+
+#web_12{
+    width: 100%;
+    #s12_1{
+        opacity: 0;
+        width: 23.5%;
+        left: 33%;
+        top: 0%;
+    }
+    #s12_2{
+        opacity: 0;
+        width: 23%;
+        left: 61.2%;
+        top: 0%;
+    }
+}
+
+#web_13{
+    width: 100%;
+    #s13_1{
+        opacity: 0;
+        width: 13.9%;
+        left: 23.9%;
+        top: 0%;
+    }
+    #s13_2{
+        opacity: 0;
+        width: 13.9%;
+        left: 37.8%;
+        top: 0%;
+    }
+    #s13_3{
+        opacity: 0;
+        width: 13.9%;
+        left: 51.7%;
+        top: 0%;
+    }
+    #s13_4{
+        opacity: 0;
+        width: 13.9%;
+        left: 65.6%;
+        top: 0%;
+    }
+    #s13_5{
+        opacity: 0;
+        width: 14.3%;
+        left: 79.7%;
+        top: 0%;
+    }
+}
+
+#web_14{
+    width: 100%;
+    #s14_1{
+        opacity: 1;
+        width: 31.8%;
+        left: 34.2%;
+        top: 94.5%;
+    }
+}
+#web_01{
+    padding-left: 5%;
+    padding-top: 30px;
+    padding-bottom: 15px;
+    h2{
+        font-weight: 100;
+        font-size: 2em;
+        line-height: 1.5em;
+    }
+    span{
+        padding: 0 15px; 
+        background: $maincolor;
+        color: $bgcolor;
+    }
+}
+
+#mobile_01{
+    width: 90%;
+    height: 23vw;
+    padding-left: 5%;
+    padding-top: 10px;
+    h2{
+        font-weight: 100;
+        font-size: 7.2vw;
+        line-height: 1.45em;
+    }
+    span{
+        padding: 0 15px; 
+        background: $maincolor;
+        color: $bgcolor;
+    }
+}
+
+
+#mobile_03{
+    width: 100%;
+    #mobile_03_1{
+        left: 23%;
+        top: 63%;
+        font-size: 9.1vw;
+
+    }
+    #mobile_03_2{
+        left: 61%;
+        top: 32.7%;
+        font-size: 7vw;
+    }
+    #mobile_03_3{
+        left: 61%;
+        top: 42.5%;
+        font-size: 7vw;
+    }
+    #mobile_03_4{
+        left: 56%;
+        top: 81.5%;
+        font-size: 10vw;
+    }
+}
+
+#mobile_04{
+    #mobile_04_1{
+        opacity: 0 ; 
+        width: 22.5%;
+        left: 22.2%;
+        top: 24%;
+    }
+    #mobile_04_2{
+        opacity: 0;
+        width: 22.7%;
+        left: 52.2%;
+        top: 24%;
+    }
+    #mobile_04_3{
+        opacity: 0;
+        width: 22.5%;
+        left: 7.8%;
+        top: 58.5%;
+    }
+    #mobile_04_4{
+        opacity: 0;
+        width: 22.5%;
+        left: 37.5%;
+        top: 58.5%;
+    }
+    #mobile_04_5{
+        opacity: 0;
+        width: 22.5%;
+        left: 67.2%;
+        top: 58.5%;
+    }
+}
+
+#mobile_05{
+    #mobile_05_1{
+        opacity: 0 ; 
+        width: 37.5%;
+        left: 8.5%;
+        top: 25%;
+    }
+    #mobile_05_2{
+        opacity: 0;
+        width: 44.5%;
+        left: 46.2%;
+        top: 25%;
+    }
+    #mobile_05_3{
+        opacity: 0;
+        width: 37.5%;
+        left: 8.8%;
+        top: 59.5%;
+    }
+    #mobile_05_4{
+        opacity: 0;
+        width: 42.5%;
+        left: 47%;
+        top: 59.5%;
+    }
+}
+
+#mobile_06{
+    width: 100%;
+    #mobile_06_1{
+        left: 38.2%;
+        top: 45.9%;
+        font-size: 5.7vw;
+    }
+}
+
+#mobile_07{
+    width: 100%;
+    height: 120vw;
+    min-height: 400px;
+    #mobile_07_1{
+        opacity: 0;
+        width: 30.1%;
+        left: 20%;
+        top: 0%;
+    }
+    #mobile_07_2{
+        opacity: 0;
+        width: 31.4%;
+        left: 50%;
+        top: 0%;
+    }
+    #mobile_07_3{
+        opacity: 0;
+        width: 29.6%;
+        left: 8%;
+        top: 46.3%;
+    }
+    #mobile_07_4{
+        opacity: 0;
+        width: 27.2%;
+        left: 37.4%;
+        top: 46.3%;
+    }
+    #mobile_07_5{
+        opacity: 0;
+        width: 27.6%;
+        left: 64.4%;
+        top: 46.3%;
+    }
+  
+}
+
+#mobile_08{
+    width: 100%;
+    height: 55vw;
+    max-height: 460px;
+    img{
+        opacity:0;
+    }
+}
+
+#mobile_09{
+    width: 100%;
+    .mobile_09_barchart1{
+        background: $maincolor;
+        height: 0.9em;
+        width: 0%;
+        top: 5.9%;
+        left: 31.6%;
+    }
+    .mobile_09_barchart1_text{
+        color: $maincolor;
+        top: 5%;
+        left: 68.4%;
+        font-size: 0.8em;
+        opacity:0;
+    }
+
+    .mobile_09_barchart2{
+        background: $darkcolor;
+        height: 0.8em;
+        width: 0%;
+        top: 9.1%;
+        left: 31.6%;
+    }
+    .mobile_09_barchart2_text{
+        color: $darkcolor;
+        top: 8%;
+        left: 62.8%;
+        font-size: 0.8em;
+        opacity:0;
+    }
+
+    .mobile_09_barchart3{
+        background: $darkcolor;
+        height: 0.8em;
+        width: 0%;
+        top: 34.4%;
+        left: 31.4%;
+    }
+    .mobile_09_barchart3_text{
+        color: $darkcolor;
+        top: 33.5%;
+        left: 68.5%;
+        font-size: 0.8em;
+        opacity:0;
+    }
+
+    .mobile_09_barchart4{
+        background: $maincolor;
+        height: 0.8em;
+        width: 0%;
+        top: 37.6%;
+        left: 31.4%;
+    }
+    .mobile_09_barchart4_text{
+        color: $maincolor;
+        top: 36.7%;
+        left: 68.5%;
+        font-size: 0.8em;
+        opacity:0;
+    }
+
+    .mobile_09_barchart5{
+        background: $maincolor;
+        height: 0.8em;
+        width: 0%;
+        top: 61.2%;
+        left: 31.4%;
+    }
+    .mobile_09_barchart5_text{
+        color: $maincolor;
+        top: 60.5%;
+        left: 68.9%;
+        font-size: 0.8em;
+        opacity:0;
+    }
+
+    .mobile_09_barchart6{
+        background: $darkcolor;
+        height: 0.8em;
+        width: 0%;
+        top: 64.4%;
+        left: 31.4%;
+    }
+    .mobile_09_barchart6_text{
+        color: $darkcolor;
+        top: 63.4%;
+        left: 63.4%;
+        font-size: 0.8em;
+        opacity:0;
+    }
+}
+
+#mobile_10{
+    width: 100%; 
+    height: 70vw;
+    max-height: 460px;
+    img{
+        opacity:0;
+    }
+}
+
+#mobile_11{
+    width: 100%;
+    #mobile_11_1{
+        opacity: 0;
+        width: 50%;
+        left: 0%;
+        top: 49%;
+    }
+    #mobile_11_2{
+        opacity: 0;
+        width: 50%;
+        left: 50%;
+        top: 49%;
+    }
+  
+}
+
+#mobile_12{
+    width: 100%;
+    #mobile_12_1{
+        opacity: 0;
+        width: 34.3%;
+        left: 0%;
+        top: 20.5%;
+    }
+    #mobile_12_2{
+        opacity: 0;
+        width: 28.6%;
+        left: 35%;
+        top: 20.5%;
+    }
+    #mobile_12_3{
+        opacity: 0;
+        width: 34.7%;
+        left: 64.5%;
+        top: 20.5%;
+    }
+    #mobile_12_4{
+        opacity: 0;
+        width: 49%;
+        left: 0%;
+        top: 62%;
+    }
+    #mobile_12_5{
+        opacity: 0;
+        width: 50%;
+        left: 49%;
+        top: 62%;
+    }
+}
+
+#mobile_13{
+    width: 100%;
+    #mobile_13_1{
+        opacity: 1;
+        width: 50%;
+        left: 25%;
+        top: 96%;
     }
 }

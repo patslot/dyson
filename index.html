@@ -25,19 +25,24 @@
 	<div class="header">
 		
 		<div id="nav">
-			<div class="nav_item"><a src="#a">調查概覽</a></div>
+			<div class="nav_item"><a href="#web_01">調查概覽</a></div>
 			<div style="margin: 0 40px;">|</div>
-			<div class="nav_item"><a src="#b">濾網分析結果</a></div>
+			<div class="nav_item"><a href="#web_04">濾網分析結果</a></div>
 			<div style="margin: 0 40px;">|</div>
-			<div class="nav_item"><a src="#c">隱形污染源頭</a></div>
+			<div class="nav_item"><a href="#web_10">隱形污染源頭</a></div>
 			<div style="margin: 0 40px;">|</div>
-			<div class="nav_item"><a src="#d">全面防禦淨化</a></div>
+			<div class="nav_item"><a href="#web_13">全面防禦淨化</a></div>
 		</div>
 	</div>
 	<div class="container" >
 			<div class="content">
 				<div id="web_01">
-					<img src="./public/web_01.jpg">
+					<h2>
+						<span id="title1"></span>
+					</h2>
+					<h2>
+						<span id="title2"></span>
+					</h2>
 				</div>
 				<div id="web_02" class="contentbox">
 					<img src="./public/web_02.jpg">
@@ -105,115 +110,229 @@
 				</div>
 				<div id="web_08" class="contentbox">
 					<img src="./public/web_08.jpg">
+						<div class="absolute_content barchart1"></div>
+						<div class="absolute_content barchart1_text">100%</div>
+
+						<div class="absolute_content barchart2"></div>
+						<div class="absolute_content barchart2_text">86.2%</div>
+
+						<div class="absolute_content barchart3"></div>
+						<div class="absolute_content barchart3_text">0.52g</div>
+
+						<div class="absolute_content barchart4"></div>
+						<div class="absolute_content barchart4_text">1.16g</div>
+
+						<div class="absolute_content barchart5"></div>
+						<div class="absolute_content barchart5_text">100%</div>
+
+						<div class="absolute_content barchart6"></div>
+						<div class="absolute_content barchart6_text">65.5%</div>
 				</div>
 				<div id="web_09" class="contentbox">
 					<img src="./public/web_09.jpg">
 				</div>
 				<div id="web_10" class="contentbox">
 					<img src="./public/web_10.jpg">
+					<div class="absolute_content" ng-model="s10_1" id="s10_1">
+						<img src="./public/s10_1.jpg">
+					</div>
 				</div>
 				<div id="web_11" class="contentbox">
 					<img src="./public/web_11.jpg">
 				</div>
 				<div id="web_12" class="contentbox">
 					<img src="./public/web_12.jpg">
+					<div class="absolute_content" ng-model="s12_1" id="s12_1">
+						<img src="./public/s12_1.jpg">
+					</div>
+					<div class="absolute_content" ng-model="s12_2" id="s12_2">
+						<img src="./public/s12_2.jpg">
+					</div>
 				</div>
 				<div id="web_13" class="contentbox">
 					<img src="./public/web_13.jpg">
+					<div class="absolute_content" ng-model="s13_1" id="s13_1">
+						<img src="./public/s13_1.jpg">
+					</div>
+					<div class="absolute_content" ng-model="s13_2" id="s13_2">
+						<img src="./public/s13_2.jpg">
+					</div>
+					<div class="absolute_content" ng-model="s13_3" id="s13_3">
+						<img src="./public/s13_3.jpg">
+					</div>
+					<div class="absolute_content" ng-model="s13_4" id="s13_4">
+						<img src="./public/s13_4.jpg">
+					</div>
+					<div class="absolute_content" ng-model="s13_5" id="s13_5">
+						<img src="./public/s13_5.jpg">
+					</div>
 				</div>
 				<div id="web_14" class="contentbox">
 					<img src="./public/web_14.jpg">
+					<div class="absolute_content" ng-model="s14_1" id="s14_1">
+						<a href="https://shop.dyson.hk/zh-HK/fans-and-purifiers/purifiers" target="_blank">
+							<img src="./public/s14_1.png">
+						</a>
+					</div>
 				</div>
 				<div id="web_15" class="contentbox">
 					<img src="./public/web_15.jpg">
 				</div>
 			</div>
 	</div>
-
+	<div class="mobileheader">
+		<div class="nav_open">
+			<a ng-click="nav_open()"><img src="./public/btn_open.png"></a>
+		</div>
+		
+		<div id="mobile_nav">
+			<div class="nav_close"><a ng-click="nav_close()"><img src="./public/btn_close.png"></a></div>
+			<div class="nav_item"><a ng-click="scrolltoelement('#mobile_02')">調查概覽</a></div>
+			<div class="nav_item"><a ng-click="scrolltoelement('#mobile_04')">濾網分析結果</a></div>
+			<div class="nav_item"><a ng-click="scrolltoelement('#mobile_10')">隱形污染源頭</a></div>
+			<div class="nav_item"><a ng-click="scrolltoelement('#mobile_13')">全面防禦淨化</a></div>
+		</div>
+	</div>
 	<div class="mobilecontainer" >
-			<div class="header">
-				<div id="nav">
-					<img src="./public/Dyson_logo.svg" style="height: 50px;">
-				</div>
-			</div>
+		
 			<div class="content">
-				<div id="mobile_01">
-					<img src="./public/mobile_01.jpg">
+				<div id="mobile_01" class="contentbox">
+					<h2>
+						<span id="mobiletitle1"></span>
+					</h2>
+					<h2>
+						<span id="mobiletitle2"></span>
+					</h2>
 				</div>
 				<div id="mobile_02" class="contentbox">
 					<img src="./public/mobile_02.jpg">
-					<div number-animation="66" class="absolute_content number" ng-model="s1_2_1" id="s1_2_1"></div>
-					<div number-animation="11" class="absolute_content number" ng-model="s1_2_2" id="s1_2_2"></div>
-					<div number-animation="44" class="absolute_content number" ng-model="s1_2_3" id="s1_2_3"></div>
-					<div number-animation="51" class="absolute_content number" ng-model="s1_2_4" id="s1_2_4"></div>
 				</div>
 				<div id="mobile_03" class="contentbox">
 					<img src="./public/mobile_03.jpg">
-					<div class="absolute_content" ng-model="s3_1" id="s3_1">
-						<img src="./public/s3_1.jpg">
-					</div>
-					<div class="absolute_content" ng-model="s3_2" id="s3_2">
-						<img src="./public/s3_2.jpg">
-					</div>
-					<div class="absolute_content" ng-model="s3_3" id="s3_3">
-						<img src="./public/s3_3.jpg">
-					</div>
-					<div class="absolute_content" ng-model="s3_4" id="s3_4">
-						<img src="./public/s3_4.jpg">
-					</div>
-					<div class="absolute_content" ng-model="s3_5" id="s3_5">
-						<img src="./public/s3_5.jpg">
-					</div>
+					<div class="absolute_content number" ng-model="mobile_03_1" id="mobile_03_1"></div>
+					<div class="absolute_content number" ng-model="mobile_03_2" id="mobile_03_2"></div>
+					<div class="absolute_content number" ng-model="mobile_03_3" id="mobile_03_3"></div>
+					<div class="absolute_content number" ng-model="mobile_03_4" id="mobile_03_4"></div>
 				</div>
-				<div fade-in-animation="" id="mobile_04" class="contentbox">
+				<div id="mobile_04" class="contentbox">
 					<img src="./public/mobile_04.jpg">
-					<div class="absolute_content" ng-model="s4_1" id="s4_1">
-						<img src="./public/s4_1.jpg">
+					<div class="absolute_content" ng-model="mobile_04_1" id="mobile_04_1">
+						<img src="./public/mobile_04_1.jpg">
 					</div>
-					<div class="absolute_content" ng-model="s4_2" id="s4_2">
-						<img src="./public/s4_2.jpg">
+					<div class="absolute_content" ng-model="mobile_04_2" id="mobile_04_2">
+						<img src="./public/mobile_04_2.jpg">
 					</div>
-					<div class="absolute_content" ng-model="s4_3" id="s4_3">
-						<img src="./public/s4_3.jpg">
+					<div class="absolute_content" ng-model="mobile_04_3" id="mobile_04_3">
+						<img src="./public/mobile_04_3.jpg">
 					</div>
-					<div class="absolute_content" ng-model="s4_4" id="s4_4">
-						<img src="./public/s4_4.jpg">
+					<div class="absolute_content" ng-model="mobile_04_4" id="mobile_04_4">
+						<img src="./public/mobile_04_4.jpg">
+					</div>
+					<div class="absolute_content" ng-model="mobile_04_5" id="mobile_04_5">
+						<img src="./public/mobile_04_5.jpg">
 					</div>
 				</div>
-				<div id="mobile_05" class="contentbox">
+				<div fade-in-animation="" id="mobile_05" class="contentbox">
 					<img src="./public/mobile_05.jpg">
+					<div class="absolute_content" ng-model="mobile_05_1" id="mobile_05_1">
+						<img src="./public/mobile_05_1.jpg">
+					</div>
+					<div class="absolute_content" ng-model="mobile_05_2" id="mobile_05_2">
+						<img src="./public/mobile_05_2.jpg">
+					</div>
+					<div class="absolute_content" ng-model="mobile_05_3" id="mobile_05_3">
+						<img src="./public/mobile_05_3.jpg">
+					</div>
+					<div class="absolute_content" ng-model="mobile_05_4" id="mobile_05_4">
+						<img src="./public/mobile_05_4.jpg">
+					</div>
 				</div>
 				<div id="mobile_06" class="contentbox">
 					<img src="./public/mobile_06.jpg">
+					<div class="absolute_content number" ng-model="mobile_06_1" id="mobile_06_1"></div>
 				</div>
 				<div id="mobile_07" class="contentbox">
-					<img src="./public/mobile_07.jpg">
+					<div class="absolute_content" ng-model="mobile_07_1" id="mobile_07_1">
+						<img src="./public/mobile_07_1.jpg">
+					</div>
+					<div class="absolute_content" ng-model="mobile_07_2" id="mobile_07_2">
+						<img src="./public/mobile_07_2.jpg">
+					</div>
+					<div class="absolute_content" ng-model="mobile_07_3" id="mobile_07_3">
+						<img src="./public/mobile_07_3.jpg">
+					</div>
+					<div class="absolute_content" ng-model="mobile_07_4" id="mobile_07_4">
+						<img src="./public/mobile_07_4.jpg">
+					</div>
+					<div class="absolute_content" ng-model="mobile_07_5" id="mobile_07_5">
+						<img src="./public/mobile_07_5.jpg">
+					</div>
 				</div>
 				<div id="mobile_08" class="contentbox">
 					<img src="./public/mobile_08.jpg">
 				</div>
 				<div id="mobile_09" class="contentbox">
 					<img src="./public/mobile_09.jpg">
+					<div class="absolute_content mobile_09_barchart1"></div>
+					<div class="absolute_content mobile_09_barchart1_text">100%</div>
+
+					<div class="absolute_content mobile_09_barchart2"></div>
+					<div class="absolute_content mobile_09_barchart2_text">86.2%</div>
+
+					<div class="absolute_content mobile_09_barchart3"></div>
+					<div class="absolute_content mobile_09_barchart3_text">0.52g</div>
+
+					<div class="absolute_content mobile_09_barchart4"></div>
+					<div class="absolute_content mobile_09_barchart4_text">1.16g</div>
+
+					<div class="absolute_content mobile_09_barchart5"></div>
+					<div class="absolute_content mobile_09_barchart5_text">100%</div>
+
+					<div class="absolute_content mobile_09_barchart6"></div>
+					<div class="absolute_content mobile_09_barchart6_text">65.5%</div>
 				</div>
 				<div id="mobile_10" class="contentbox">
 					<img src="./public/mobile_10.jpg">
 				</div>
 				<div id="mobile_11" class="contentbox">
 					<img src="./public/mobile_11.jpg">
+					<div class="absolute_content" ng-model="mobile_11_1" id="mobile_11_1">
+						<img src="./public/mobile_11_1.jpg">
+					</div>
+					<div class="absolute_content" ng-model="mobile_11_2" id="mobile_11_2">
+						<img src="./public/mobile_11_2.jpg">
+					</div>
 				</div>
 				<div id="mobile_12" class="contentbox">
 					<img src="./public/mobile_12.jpg">
+					<div class="absolute_content" ng-model="mobile_12_1" id="mobile_12_1">
+						<img src="./public/mobile_12_1.jpg">
+					</div>
+					<div class="absolute_content" ng-model="mobile_12_2" id="mobile_12_2">
+						<img src="./public/mobile_12_2.jpg">
+					</div>
+					<div class="absolute_content" ng-model="mobile_12_3" id="mobile_12_3">
+						<img src="./public/mobile_12_3.jpg">
+					</div>
+					<div class="absolute_content" ng-model="mobile_12_4" id="mobile_12_4">
+						<img src="./public/mobile_12_4.jpg">
+					</div>
+					<div class="absolute_content" ng-model="mobile_12_5" id="mobile_12_5">
+						<img src="./public/mobile_12_5.jpg">
+					</div>
 				</div>
 				<div id="mobile_13" class="contentbox">
 					<img src="./public/mobile_13.jpg">
+					<div class="absolute_content" ng-model="mobile_13_1" id="mobile_13_1">
+						<a href="https://shop.dyson.hk/zh-HK/fans-and-purifiers/purifiers" target="_blank">
+							<img src="./public/s14_1.png">
+						</a>
+					</div>
 				</div>
 				<div id="mobile_14" class="contentbox">
 					<img src="./public/mobile_14.jpg">
 				</div>
-				<div id="mobile_15" class="contentbox">
-					<img src="./public/mobile_15.jpg">
-				</div>
-				
+			
 			</div>
 	</div>
 
