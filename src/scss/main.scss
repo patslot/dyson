@@ -42,7 +42,7 @@ h3{
 .container{
     max-width: 1000px;
     margin: 0 auto;
-    padding-top: 269px;
+    padding-top: 150px;
     img {
         width: 100%;
     }
@@ -164,7 +164,7 @@ h3{
 }
 .header{
     width:100%;
-    padding-top:195px;
+    padding-top:63px;
     background: #fff url("../../public/header.jpg") no-repeat center top;
     position: fixed;
     z-index: 100;
@@ -172,7 +172,7 @@ h3{
         display:none;
     }
     #nav{
-        height: 74px;
+        height: 48px;
         background: #000;
         color: #fff;
         display:flex;

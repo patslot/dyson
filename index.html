@@ -5,7 +5,13 @@
 	<meta http-equiv="Content-type" content="text/html; charset=utf-8">
 	<meta name="viewport"
 		content="user-scalable=no, width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" />
-	<title>Dyson</title>
+<meta property="og:url"                content=" " />
+<meta property="og:type"               content="article" />
+<meta property="og:title"              content="Dyson 健康空氣調查" />
+<meta property="og:description"        content="調查為期半年，當中包含了與香港過敏協會合作的「環境致敏原與空氣品質認知」的小學調查，並委托第三方實驗室進行研究及分析結果，了解分佈於全港、九、新界各區的家居及小學校舍中空氣存在的隱形污染物。" />
+<meta property="og:image"              content="https://campaign.nextdigital.com.hk/Dyson/dev/v1/public/fbshare.jpg" />
+
+	<title>Dyson 健康空氣調查</title>
 	<link rel="shortcut icon" href="favicon.ico">
 	<script type="text/javascript" src="./public/assets/bundle.js"></script>
 	<link rel="stylesheet" type="text/css" href="./public/assets/main.css">
@@ -25,13 +31,13 @@
 	<div class="header">
 		
 		<div id="nav">
-			<div class="nav_item"><a href="#web_01">調查概覽</a></div>
+			<div class="nav_item"><a ng-click="scrolltoelement('#web_01');">調查概覽</a></div>
 			<div style="margin: 0 40px;">|</div>
-			<div class="nav_item"><a href="#web_04">濾網分析結果</a></div>
+			<div class="nav_item"><a ng-click="scrolltoelement('#web_05');">濾網分析結果</a></div>
 			<div style="margin: 0 40px;">|</div>
-			<div class="nav_item"><a href="#web_10">隱形污染源頭</a></div>
+			<div class="nav_item"><a ng-click="scrolltoelement('#web_11');">隱形污染源頭</a></div>
 			<div style="margin: 0 40px;">|</div>
-			<div class="nav_item"><a href="#web_13">全面防禦淨化</a></div>
+			<div class="nav_item"><a ng-click="scrolltoelement('#web_14');">全面防禦淨化</a></div>
 		</div>
 	</div>
 	<div class="container" >
@@ -171,7 +177,7 @@
 					<img src="./public/web_14.jpg">
 					<div class="absolute_content" ng-model="s14_1" id="s14_1">
 						<a href="https://bit.ly/2UOqeJt" target="_blank">
-							<img src="./public/s14_1.png">
+							<img src="./public/s14_1.gif">
 						</a>
 					</div>
 				</div>
@@ -187,10 +193,10 @@
 		
 		<div id="mobile_nav">
 			<div class="nav_close"><a ng-click="nav_close()"><img src="./public/btn_close.png"></a></div>
-			<div class="nav_item"><a ng-click="scrolltoelement('#mobile_02')">調查概覽</a></div>
-			<div class="nav_item"><a ng-click="scrolltoelement('#mobile_04')">濾網分析結果</a></div>
-			<div class="nav_item"><a ng-click="scrolltoelement('#mobile_10')">隱形污染源頭</a></div>
-			<div class="nav_item"><a ng-click="scrolltoelement('#mobile_13')">全面防禦淨化</a></div>
+			<div class="nav_item"><a ng-click="mobilescrolltoelement('#mobile_01')">調查概覽</a></div>
+			<div class="nav_item"><a ng-click="mobilescrolltoelement('#mobile_06')">濾網分析結果</a></div>
+			<div class="nav_item"><a ng-click="mobilescrolltoelement('#mobile_11')">隱形污染源頭</a></div>
+			<div class="nav_item"><a ng-click="mobilescrolltoelement('#mobile_13')">全面防禦淨化</a></div>
 		</div>
 	</div>
 	<div class="mobilecontainer" >
@@ -325,7 +331,7 @@
 					<img src="./public/mobile_13.jpg">
 					<div class="absolute_content" ng-model="mobile_13_1" id="mobile_13_1">
 						<a href="https://bit.ly/2UOqeJt" target="_blank">
-							<img src="./public/s14_1.png">
+							<img src="./public/s14_1.gif">
 						</a>
 					</div>
 				</div>

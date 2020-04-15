@@ -18,6 +18,38 @@ import anime from 'animejs/lib/anime.es.js';
 
 var dysonApp = angular.module('dyson', []);
 dysonApp.controller('dysonController', function dysonController($scope, $window, $timeout) {
+
+    var title1 = {
+        strings: ['家居、學校課室的空氣'],
+        typeSpeed: 40,
+		showCursor: false
+        };
+        var title2 = {
+        strings: ['有多潔淨？'],
+        typeSpeed: 40,
+        startDelay: 1200,
+		showCursor: false
+    };
+    var typed = new Typed('#title1', title1);
+    var typed2 = new Typed('#title2', title2);
+    typed.stop();
+    typed2.stop();
+    var mobiletitle1 = {
+        strings: ['家居、學校課室的空氣'],
+        typeSpeed: 40,
+		showCursor: false
+        };
+    var mobiletitle2 = {
+        strings: ['有多潔淨？'],
+        typeSpeed: 40,
+        startDelay: 1200,
+		showCursor: false
+        };
+    var mobiletyped = new Typed('#mobiletitle1', mobiletitle1);
+    var mobiletyped2 = new Typed('#mobiletitle2', mobiletitle2);
+    mobiletyped.stop();
+    mobiletyped2.stop();
+
     function isScrolledIntoView(elem){
         var docViewTop = $(window).scrollTop();
         var docViewBottom = docViewTop + $(window).height();
@@ -38,16 +70,28 @@ dysonApp.controller('dysonController', function dysonController($scope, $window,
     $scope.stage = 1 ;
     $scope.loading = false;
     $scope.desktop = true; 
+    $scope.mobilescrolltoelement =function(eleID){
 
-    $scope.scrolltoelement =function(eleID){
-
-        $window.scrollTo(0, angular.element(eleID).offset().top); 
+        $window.scrollTo(0, $(eleID).offset().top); 
+        var headerheight = $('.mobileheader').outerHeight(true);
+        console.log(headerheight);
+        window.scrollBy(0, -headerheight);  
         anime({
             targets: '#mobile_nav',
             duration: 500,
             translateX: '110%',
             easing: 'easeInSine'
         });
+
+        // $(window).scroll(0,1328);
+    }
+    $scope.scrolltoelement =function(eleID){
+
+        $window.scrollTo(0, $(eleID).offset().top); 
+        var headerheight = $('.header').outerHeight(true);
+        console.log(headerheight);
+        window.scrollBy(0, -headerheight);  
+        
 
         // $(window).scroll(0,1328);
     }
@@ -85,36 +129,40 @@ dysonApp.controller('dysonController', function dysonController($scope, $window,
                 animate_s1_2_4.start();
                 s1_animation()
                 s3_animation();
-                s14_animation();
             }else{
                 $scope.desktop = false; 
                 mobile1_animation();
-                mobile13_animation();
                 console.log('mobile');
             }
             
         }
     );  
-    
+    angular.element($window).bind('resize', function(){
+        if($(window).width() > 799){
+            $scope.desktop = true; 
+            typed.reset(true);
+            typed2.reset(true);
+            typed.start();
+            typed2.start();
+            s3_animation();
+            s14_animation();
+        }else{
+            $scope.desktop = false; 
+            mobiletyped.reset(true);
+            mobiletyped2.reset(true);
+            mobiletyped.start();
+            mobiletyped2.start();
+            mobile13_animation();
+        }
+    }); 
     function s1_animation(){
-        var title1 = {
-        strings: ['家居、學校課室的空氣'],
-        typeSpeed: 40,
-		showCursor: false
-        };
-        var title2 = {
-        strings: ['有多潔淨？'],
-        typeSpeed: 40,
-        startDelay: 1200,
-		showCursor: false
-        };
-        var typed = new Typed('#title1', title1);
-        var typed2 = new Typed('#title2', title2);
+        typed.start();
+        typed2.start();
     }
     function s3_animation(){
         anime({
             targets: '#web_03 div',
-            duration: 2000,
+            duration: 1000,
             delay: function(target, index) {
                 return index * 200;
              },
@@ -125,7 +173,7 @@ dysonApp.controller('dysonController', function dysonController($scope, $window,
     function s4_animation(){
         anime({
             targets: '#web_04 div',
-            duration: 2000,
+            duration: 1000,
             delay: function(target, index) {
                 return index * 500;
              },
@@ -138,7 +186,7 @@ dysonApp.controller('dysonController', function dysonController($scope, $window,
             decimalPlaces: 0,
             useEasing : true,
             useGrouping : true,
-            duration: 5,
+            duration: 2,
             separator : ',',
             decimal : ".",
             prefix : '',
@@ -150,7 +198,7 @@ dysonApp.controller('dysonController', function dysonController($scope, $window,
     function s6_animation(){
         anime({
             targets: '#web_06 div',
-            duration: 2000,
+            duration: 1000,
             delay: function(target, index) {
                 return index * 200;
              },
@@ -165,7 +213,7 @@ dysonApp.controller('dysonController', function dysonController($scope, $window,
     function s7_animation(){
         anime({
             targets: '#web_07 img',
-            duration: 1000,
+            duration: 500,
             opacity: 1,
             translateY: -20,
             easing: 'easeInSine'
@@ -174,13 +222,13 @@ dysonApp.controller('dysonController', function dysonController($scope, $window,
     function s8_animation(){
         anime({
             targets: '.barchart1',
-            duration: 1000,
+            duration: 500,
             width: '14%',
             easing: 'easeInSine',
             complete: function(anim) {
                 anime({
                     targets: '.barchart1_text',
-                    duration: 1000,
+                    duration: 500,
                     opacity: 1,
                     easing: 'easeInSine'
                 });
@@ -188,13 +236,13 @@ dysonApp.controller('dysonController', function dysonController($scope, $window,
           });
           anime({
             targets: '.barchart2',
-            duration: 1000,
+            duration: 500,
             width: '11.2%',
             easing: 'easeInSine',
             complete: function(anim) {
                 anime({
                     targets: '.barchart2_text',
-                    duration: 1000,
+                    duration: 500,
                     opacity: 1,
                     easing: 'easeInSine'
                 });
@@ -202,13 +250,13 @@ dysonApp.controller('dysonController', function dysonController($scope, $window,
           });
           anime({
             targets: '.barchart3',
-            duration: 1000,
+            duration: 500,
             width: '6.2%',
             easing: 'easeInSine',
             complete: function(anim) {
                 anime({
                     targets: '.barchart3_text',
-                    duration: 1000,
+                    duration: 500,
                     opacity: 1,
                     easing: 'easeInSine'
                 });
@@ -216,13 +264,13 @@ dysonApp.controller('dysonController', function dysonController($scope, $window,
           });
           anime({
             targets: '.barchart4',
-            duration: 1000,
+            duration: 500,
             width: '13.4%',
             easing: 'easeInSine',
             complete: function(anim) {
                 anime({
                     targets: '.barchart4_text',
-                    duration: 1000,
+                    duration: 500,
                     opacity: 1,
                     easing: 'easeInSine'
                 });
@@ -230,13 +278,13 @@ dysonApp.controller('dysonController', function dysonController($scope, $window,
           });
           anime({
             targets: '.barchart5',
-            duration: 1000,
+            duration: 500,
             width: '14%',
             easing: 'easeInSine',
             complete: function(anim) {
                 anime({
                     targets: '.barchart5_text',
-                    duration: 1000,
+                    duration: 500,
                     opacity: 1,
                     easing: 'easeInSine'
                 });
@@ -244,13 +292,13 @@ dysonApp.controller('dysonController', function dysonController($scope, $window,
           });
           anime({
             targets: '.barchart6',
-            duration: 1000,
+            duration: 500,
             width: '8%',
             easing: 'easeInSine',
             complete: function(anim) {
                 anime({
                     targets: '.barchart6_text',
-                    duration: 1000,
+                    duration: 500,
                     opacity: 1,
                     easing: 'easeInSine'
                 });
@@ -260,7 +308,7 @@ dysonApp.controller('dysonController', function dysonController($scope, $window,
     function s10_animation(){
         anime({
             targets: '#web_10 div',
-            duration: 1000,
+            duration: 500,
             opacity: 1,
             translateY: -20,
             easing: 'easeInSine'
@@ -269,9 +317,9 @@ dysonApp.controller('dysonController', function dysonController($scope, $window,
     function s12_animation(){
         anime({
             targets: '#web_12 div',
-            duration: 2000,
+            duration: 1000,
             delay: function(target, index) {
-                return index * 1000;
+                return index * 500;
              },
             opacity: 1,
             easing: 'easeInSine'
@@ -280,9 +328,9 @@ dysonApp.controller('dysonController', function dysonController($scope, $window,
     function s13_animation(){
         anime({
             targets: '#web_13 div',
-            duration: 2000,
+            duration: 1000,
             delay: function(target, index) {
-                return index * 1000;
+                return index * 500;
              },
             opacity: 1,
             easing: 'easeInSine'
@@ -299,19 +347,9 @@ dysonApp.controller('dysonController', function dysonController($scope, $window,
     }
 
     function mobile1_animation(){
-        var title1 = {
-        strings: ['家居、學校課室的空氣'],
-        typeSpeed: 40,
-		showCursor: false
-        };
-        var title2 = {
-        strings: ['有多潔淨？'],
-        typeSpeed: 40,
-        startDelay: 1200,
-		showCursor: false
-        };
-        var typed = new Typed('#mobiletitle1', title1);
-        var typed2 = new Typed('#mobiletitle2', title2);
+
+        mobiletyped.start();
+        mobiletyped2.start();
     }
     function mobile3_animation(){
         var animate_mobile_03_1 = new CountUp("mobile_03_1", 66, options);
@@ -326,7 +364,7 @@ dysonApp.controller('dysonController', function dysonController($scope, $window,
     function mobile4_animation(){
         anime({
             targets: '#mobile_04 div',
-            duration: 2000,
+            duration: 1000,
             delay: function(target, index) {
                 return index * 500;
              },
@@ -337,7 +375,7 @@ dysonApp.controller('dysonController', function dysonController($scope, $window,
     function mobile5_animation(){
         anime({
             targets: '#mobile_05 div',
-            duration: 2000,
+            duration: 1000,
             delay: function(target, index) {
                 return index * 500;
              },
@@ -350,7 +388,7 @@ dysonApp.controller('dysonController', function dysonController($scope, $window,
             decimalPlaces: 0,
             useEasing : true,
             useGrouping : true,
-            duration: 5,
+            duration: 2,
             separator : ',',
             decimal : ".",
             prefix : '',
@@ -362,7 +400,7 @@ dysonApp.controller('dysonController', function dysonController($scope, $window,
     function mobile7_animation(){
         anime({
             targets: '#mobile_07 div',
-            duration: 2000,
+            duration: 1000,
             delay: function(target, index) {
                 return index * 500;
              },
@@ -376,7 +414,7 @@ dysonApp.controller('dysonController', function dysonController($scope, $window,
     function mobile8_animation(){
         anime({
             targets: '#mobile_08 img',
-            duration: 1000,
+            duration: 500,
             opacity: 1,
             translateY: -10,
             easing: 'easeInSine'
@@ -386,13 +424,13 @@ dysonApp.controller('dysonController', function dysonController($scope, $window,
     function mobile9_1_animation(){
         anime({
             targets: '.mobile_09_barchart1',
-            duration: 1000,
+            duration: 500,
             width: '34%',
             easing: 'easeInSine',
             complete: function(anim) {
                 anime({
                     targets: '.mobile_09_barchart1_text',
-                    duration: 1000,
+                    duration: 500,
                     opacity: 1,
                     easing: 'easeInSine'
                 });
@@ -400,13 +438,13 @@ dysonApp.controller('dysonController', function dysonController($scope, $window,
           });
           anime({
             targets: '.mobile_09_barchart2',
-            duration: 1000,
+            duration: 500,
             width: '28.2%',
             easing: 'easeInSine',
             complete: function(anim) {
                 anime({
                     targets: '.mobile_09_barchart2_text',
-                    duration: 1000,
+                    duration: 500,
                     opacity: 1,
                     easing: 'easeInSine'
                 });
@@ -416,13 +454,13 @@ dysonApp.controller('dysonController', function dysonController($scope, $window,
     function mobile9_2_animation(){      
           anime({
             targets: '.mobile_09_barchart3',
-            duration: 1000,
+            duration: 500,
             width: '15.2%',
             easing: 'easeInSine',
             complete: function(anim) {
                 anime({
                     targets: '.mobile_09_barchart3_text',
-                    duration: 1000,
+                    duration: 500,
                     opacity: 1,
                     easing: 'easeInSine'
                 });
@@ -430,13 +468,13 @@ dysonApp.controller('dysonController', function dysonController($scope, $window,
           });
           anime({
             targets: '.mobile_09_barchart4',
-            duration: 1000,
+            duration: 500,
             width: '34.8%',
             easing: 'easeInSine',
             complete: function(anim) {
                 anime({
                     targets: '.mobile_09_barchart4_text',
-                    duration: 1000,
+                    duration: 500,
                     opacity: 1,
                     easing: 'easeInSine'
                 });
@@ -446,13 +484,13 @@ dysonApp.controller('dysonController', function dysonController($scope, $window,
     function mobile9_3_animation(){            
           anime({
             targets: '.mobile_09_barchart5',
-            duration: 1000,
+            duration: 500,
             width: '34%',
             easing: 'easeInSine',
             complete: function(anim) {
                 anime({
                     targets: '.mobile_09_barchart5_text',
-                    duration: 1000,
+                    duration: 500,
                     opacity: 1,
                     easing: 'easeInSine'
                 });
@@ -460,13 +498,13 @@ dysonApp.controller('dysonController', function dysonController($scope, $window,
           });
           anime({
             targets: '.mobile_09_barchart6',
-            duration: 1000,
+            duration: 500,
             width: '20%',
             easing: 'easeInSine',
             complete: function(anim) {
                 anime({
                     targets: '.mobile_09_barchart6_text',
-                    duration: 1000,
+                    duration: 500,
                     opacity: 1,
                     easing: 'easeInSine'
                 });
@@ -477,7 +515,7 @@ dysonApp.controller('dysonController', function dysonController($scope, $window,
     function mobile10_animation(){
         anime({
             targets: '#mobile_10 img',
-            duration: 1000,
+            duration: 500,
             opacity: 1,
             translateY: -20,
             easing: 'easeInSine'
@@ -486,7 +524,7 @@ dysonApp.controller('dysonController', function dysonController($scope, $window,
     function mobile11_animation(){
         anime({
             targets: '#mobile_11 div',
-            duration: 2000,
+            duration: 1000,
             delay: function(target, index) {
                 return index * 500;
              },
@@ -497,7 +535,7 @@ dysonApp.controller('dysonController', function dysonController($scope, $window,
     function mobile12_animation(){
         anime({
             targets: '#mobile_12 div',
-            duration: 2000,
+            duration: 1000,
             delay: function(target, index) {
                 return index * 500;
              },
@@ -508,7 +546,7 @@ dysonApp.controller('dysonController', function dysonController($scope, $window,
     function mobile13_animation(){
         anime({
             targets: '#mobile_13 div',
-            duration: 1000,
+            duration: 500,
             opacity: 0.7,
             loop: true,
             easing: 'easeInSine'
