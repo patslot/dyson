@@ -49859,11 +49859,9 @@ dysonApp.controller('dysonController', function dysonController($scope, $window,
                 animate_s1_2_4.start();
                 s1_animation()
                 s3_animation();
-                s14_animation();
             }else{
                 $scope.desktop = false; 
                 mobile1_animation();
-                mobile13_animation();
                 console.log('mobile');
             }
             
